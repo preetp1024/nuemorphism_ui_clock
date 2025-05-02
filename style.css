@@ -1,33 +1,115 @@
 body {
-    background: #e0e0e0;
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .clock {
-    background: #e0e0e0;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
-    text-align: center;
-    color: #333333;
-    width: 280px;
-  }
-  .clock #time {
-    padding: 10px 0;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
-    border-radius: 10px;
-  }
-  .clock #day {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  .clock #date {
-    font-size: 1rem;
-    color: #666666;
-  }
+  background: linear-gradient(135deg, #d3cce3, #e9e4f0);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.clock {
+  background: #f0f0f3;
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1),
+              -10px -10px 30px rgba(255, 255, 255, 0.7);
+  text-align: center;
+  color: #2c2c2c;
+  width: 320px;
+  transition: all 0.3s ease-in-out;
+}
+
+.clock:hover {
+  transform: scale(1.02);
+  box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.15),
+              -12px -12px 35px rgba(255, 255, 255, 0.8);
+}
+
+#greeting {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #5e5e5e;
+  background: #ebebf0;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 6px #c5c5c5,
+              inset -3px -3px 6px #ffffff;
+}
+
+.clock #time {
+  padding: 12px 0;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  background: #e6e6e6;
+  box-shadow: inset 4px 4px 8px #bebebe,
+              inset -4px -4px 8px #ffffff;
+  border-radius: 12px;
+  color: #1a1a1a;
+}
+
+.clock #day {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  color: #4b4b4b;
+}
+
+.clock #date {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Toggle Button Style */
+#toggle-theme {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #e0e0e0;
+  box-shadow: 4px 4px 10px #bebebe, -4px -4px 10px #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c3a);
+  color: #f0f0f0;
+}
+
+body.dark .clock {
+  background: #2e2e3a;
+  color: #e0e0e0;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4),
+              -10px -10px 30px rgba(60, 60, 60, 0.1);
+}
+
+body.dark .clock #time {
+  background: #3a3a4a;
+  color: #ffffff;
+  box-shadow: inset 4px 4px 8px #1a1a1a,
+              inset -4px -4px 8px #4a4a4a;
+}
+
+body.dark #greeting {
+  background: #3c3c4f;
+  color: #ddd;
+  box-shadow: inset 3px 3px 6px #1c1c2a,
+              inset -3px -3px 6px #4c4c6a;
+}
+
+body.dark #toggle-theme {
+  background: #3a3a4a;
+  color: #fff;
+  box-shadow: 4px 4px 10px #1a1a1a, -4px -4px 10px #4a4a4a;
+}
+
+body.dark .clock #day,
+body.dark .clock #date {
+  color: #ffffff;
+}
